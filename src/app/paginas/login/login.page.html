@@ -1,0 +1,17 @@
+<app-header [signing]="true"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <div id="titletext">
+    <ion-title>Accede a tu cuenta</ion-title>
+  </div>
+
+  <div id="container">      
+    <ion-input label="Correo electrónico:"></ion-input>
+    <ion-input type="password" label="Contraseña:" required>
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+    <ion-button (click)="goToHome()"> Iniciar sesión </ion-button>
+    <p class="underdot" routerLink="/signup"> ¿No tienes cuenta? Regístrate </p>
+  </div>
+</ion-content>
