@@ -14,7 +14,8 @@ Integrantes:
 ## Características actuales
 - Implementación del diseño básico en Ionic + Angular.
 - Definición de la navegación entre páginas.
-- Prototipos UI/UX en Figma ( **INGRESAR LINK**)
+- Prototipos UI/UX en Figma ([https://www.figma.com/design/Dy0qfMYcnPz3UbSHNnigGP/The-Burgers-UI?t=ytQ7deb3KeScpofP-0])
+(Para ingresar al prototipo es necesario pedir permisos de visualización).
 
 ## Preparación previa
 - Se requiere tener Node.js instalado.
