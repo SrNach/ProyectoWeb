@@ -1,0 +1,55 @@
+ion-content {
+    --background: #fff !important;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-left: 20%;
+  padding-right: 20%;
+  top: 20%;
+  color: #000000;
+}
+
+#nametext, #profiledata {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    flex: 1; 
+}
+
+#nametext{
+    margin-right: 1rem;
+}
+#profiledata{
+    margin-left: 1rem;
+    
+}
+#profiledata p{
+    text-align: left;
+    margin-left: 4rem;
+    width: 100%;
+}
+#nametext h3{
+    margin-bottom: 5rem;
+}
+
+ion-title{
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+ion-button{
+    --background: #56caff !important;
+    --color: #000000 !important;
+    --color-hover: #4e4e4e !important;
+    --border-radius: 10px    !important;
+    font-size: 1rem;
+    text-transform: capitalize;
+    box-sizing: border-box;
+}

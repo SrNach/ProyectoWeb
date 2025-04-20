@@ -1,0 +1,30 @@
+ion-content {
+    --background: #fff !important;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+  color:#000000;
+  margin-bottom: 1rem;
+}
+
+ion-button{
+    --background: #56caff !important;
+    --color: #000000 !important;
+    --color-hover: #4e4e4e !important;
+    --border-radius: 10px    !important;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
