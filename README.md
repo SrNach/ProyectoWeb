@@ -1,7 +1,7 @@
 # ProyectoWeb
 Proyecto de Ingeniería Web y Móvil
 
-##Descripción
+## Descripción
 La aplicación "The Burgers" es una página de ventas de hamburguesas, bebidas y papas fritas, desarrollado con Ionic + Angular en front-end.
 
 Integrantes:
@@ -11,7 +11,7 @@ Integrantes:
 - Nicolás Torfan Bdewi
 - Bruno Toro Carrasco
   
-##Características actuales
+## Características actuales
 - Implementación del diseño básico en Ionic + Angular.
 - Definición de la navegación entre páginas.
 - Prototipos UI/UX en Figma ( **INGRESAR LINK**)
@@ -22,14 +22,13 @@ Integrantes:
 - Se requiere tener Angular /CLI instalado.
 - Se requiere de un editor de código como VSCode.
 
-##Instrucciones de uso
+## Instrucciones de uso
 - Descargar carpeta "ProyectoWeb" del repositorio.
 - Abrir carpeta con VSCode o similares.
 - Utilizar el comando "npm install" para instalar dependencias.
 - Iniciar el proyecto con el comando "ionic serve".
 
-##Requerimientos funcionales
-REQUERIMIENTOS FUNCIONALES
+## Requerimientos funcionales
 Gestión de cuenta
 1. El usuario debe poder registrarse con correo electrónico, nombre de usuario, contraseña.
 2. El usuario debe poder iniciar sesión con correo electrónico y contraseña.
@@ -56,7 +55,7 @@ Sistema de Puntos
 1. El usuario debe poder acumular puntos de la aplicación al realizar compras.
 2. El usuario debe ser capaz de canjear puntos por productos o combos del sistema.
 
-##Requerimientos no funcionales
+## Requerimientos no funcionales
 1. El sistema debe contar con una interfaz de usuario intuitiva, amigable y fácil de navegar.
 2. El sistema debe contrar con una interfaz de usuario adaptable para aplicación web y móvil.
 3. El sistema cuenta con una rapidez de carga de menos de 2 segundos.
