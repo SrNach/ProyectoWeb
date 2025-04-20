@@ -5,9 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { SignupPage } from './signup.page';
 import { SignupPageRoutingModule } from './signup-routing.module';
 import { HeaderComponent } from '../../componentes/header/header.component';
-import { FooterComponent } from '../../componentes/footer/footer.component';
-import { Router } from '@angular/router';
-
 
 @NgModule({
   imports: [
@@ -16,7 +13,6 @@ import { Router } from '@angular/router';
     IonicModule,
     SignupPageRoutingModule,
     HeaderComponent,
-    FooterComponent
   ],
   declarations: [SignupPage]
 })
