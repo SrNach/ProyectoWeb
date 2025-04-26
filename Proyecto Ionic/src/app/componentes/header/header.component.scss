@@ -1,0 +1,53 @@
+ion-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.headertext{
+    font-size: 150%;
+    color:#ffffff;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.logo{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 1%;
+    margin-left: 3%;
+    height: auto;
+}
+
+.custom-button{
+    --background: #ffffff !important;
+    --color: #000000 !important;
+    --color-hover: #4e4e4e !important;
+    --border-radius: 10px    !important;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+/*
+@media(max-width: 768px) {
+    .headertext{
+        font-size: 1rem;
+    }
+    .logo{
+        width: 3rem;
+        height: 3rem;
+    }
+    .custom-button{
+        --background: #ffffff !important;
+        --color: #000000 !important;
+        --color-hover: #4e4e4e !important;
+        --border-radius: 10px    !important;
+        font-size: 0.4rem;
+        padding: 0.3rem 0rem;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}*/

@@ -1,0 +1,55 @@
+<app-header [guest]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="botonperfil">
+    <ion-button class="default" (click)="goToProfile()"> Boton temporal a "Perfil"</ion-button>
+  </div>
+
+  <div id="banner">
+    <ion-button id="bannerbutton" class="default"> Realizar pedido
+    </ion-button>
+    <p id="bannerdesc">Descripción (Banner con imagen)</p>
+  </div>
+
+  <div id="menucontainer">
+    <div>
+      <ion-button class="menuitem">
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+      <p>Combos</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem">
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+      <p>Hamburguesas</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem">
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+      <p>Para acompañar</p>
+    </div>
+  </div>
+
+  <div id="ptscontainer">
+    <ion-title id="titlepts">Canjea tus puntos</ion-title>
+
+    <div id="itemscontainer">
+      <button class="arrow left">‹</button>
+      <div class="ptsitems">
+      </div>
+      <div class="ptsitems">
+      </div>
+      <div class="ptsitems">
+      </div>
+      <button class="arrow right">›</button>
+    </div>
+  </div>
+
+  <div id="footer">
+  </div>
+</ion-content>
