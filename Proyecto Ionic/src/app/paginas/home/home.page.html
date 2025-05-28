@@ -2,37 +2,38 @@
 
 <ion-content [fullscreen]="true">
 
-  <div id="botonperfil">
-    <ion-button class="default" (click)="goToProfile()"> Boton temporal a "Perfil"</ion-button>
-  </div>
+
 
   <div id="banner">
-    <ion-button id="bannerbutton" class="default"> Realizar pedido
-    </ion-button>
-    <p id="bannerdesc">Descripción (Banner con imagen)</p>
+    <ion-button id="bannerbutton" class="defaultbutton" (click)="goToMenuCombo()"> Realizar pedido</ion-button>
+    <p id="bannerdesc">Realiza tu pedido y consigue tus hamburguesas favoritas!</p>
   </div>
 
   <div id="menucontainer">
     <div>
-      <ion-button class="menuitem">
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      <ion-button class="menuitem" (click)="goToMenuCombo()">
+         <img src="assets/img/comboimg.png" alt="icono" class="imgboton" />
       </ion-button>
       <p>Combos</p>
     </div>
 
     <div>
-      <ion-button class="menuitem">
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      <ion-button class="menuitem" (click)="goToMenuBurger()">
+        <img src="assets/img/burgerbutton.png" alt="icono" class="imgboton" />
       </ion-button>
       <p>Hamburguesas</p>
     </div>
 
     <div>
-      <ion-button class="menuitem">
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      <ion-button class="menuitem" (click)="goToMenuPapita()">
+        <img src="assets/img/papitas.png" alt="icono" class="imgboton" />
       </ion-button>
       <p>Para acompañar</p>
     </div>
+  </div>
+
+  <div id="botonperfil">
+    <ion-button class="defaultbutton" (click)="goToProfile()"> Boton temporal a "Perfil"</ion-button>
   </div>
 
   <div id="ptscontainer">
@@ -52,4 +53,5 @@
 
   <div id="footer">
   </div>
+
 </ion-content>

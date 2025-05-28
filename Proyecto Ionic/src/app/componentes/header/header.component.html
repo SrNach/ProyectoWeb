@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <div class="logo-container">
-      <img src="assets/icon/burgerlogo.png" alt="Logo" class="logo" />
+      <img src="assets/img/burgerlogo.png" alt="Logo" class="logo" (click)="goToHome()"/>
       <ion-title class="headertext">The Burger</ion-title> 
     </div>
     <ion-buttons slot="end" *ngIf="logged">

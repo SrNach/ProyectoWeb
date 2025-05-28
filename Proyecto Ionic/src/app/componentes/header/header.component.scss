@@ -1,3 +1,7 @@
+ion-toolbar{
+    --background: #1f1f1f !important;
+}
+
 ion-buttons{
     display: flex;
     gap: 10px;
@@ -21,6 +25,7 @@ ion-buttons{
     margin: 1%;
     margin-left: 3%;
     height: auto;
+    cursor: pointer;
 }
 
 .custom-button{
@@ -31,8 +36,8 @@ ion-buttons{
     font-size: 1rem;
     text-transform: capitalize;
 }
-/*
-@media(max-width: 768px) {
+
+@media(max-width: 480px) {
     .headertext{
         font-size: 1rem;
     }
@@ -45,9 +50,9 @@ ion-buttons{
         --color: #000000 !important;
         --color-hover: #4e4e4e !important;
         --border-radius: 10px    !important;
-        font-size: 0.4rem;
+        font-size: 0.7rem;
         padding: 0.3rem 0rem;
         margin: 0;
         box-sizing: border-box;
     }
-}*/
+}

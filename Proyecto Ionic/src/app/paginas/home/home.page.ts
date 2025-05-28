@@ -10,8 +10,19 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private router: Router) { }
+  
   goToProfile(){
     this.router.navigate(['/profile']);
+
+  }
+  goToMenuCombo(){
+    this.router.navigate(['/menucombo']);
+  }
+  goToMenuBurger(){
+    this.router.navigate(['/menuburger']);
+  }
+  goToMenuPapita(){
+    this.router.navigate(['/menupapita']);
   }
 
 

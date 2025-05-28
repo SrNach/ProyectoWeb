@@ -1,0 +1,27 @@
+<app-header [guest]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div id="menucontainer">
+    <div>
+      <ion-button class="menuitem" id="selected">
+         <img src="assets/img/comboimg.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Combos</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuBurger()">
+        <img src="assets/img/burgerbutton.png" alt="icono" class="imgboton"/>
+      </ion-button>
+      <p>Hamburguesas</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuPapita()">
+        <img src="assets/img/papitas.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Para acompañar</p>
+    </div>
+  </div>
+</ion-content>

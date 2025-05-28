@@ -23,6 +23,23 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./paginas/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'menuprod',
+    loadChildren: () => import('./paginas/menucombo/menucombo.module').then( m => m.MenucomboPageModule)
+  },  {
+    path: 'menucombo',
+    loadChildren: () => import('./paginas/menucombo/menucombo.module').then( m => m.MenucomboPageModule)
+  },
+  {
+    path: 'menuburger',
+    loadChildren: () => import('./paginas/menuburger/menuburger.module').then( m => m.MenuburgerPageModule)
+  },
+  {
+    path: 'menupapita',
+    loadChildren: () => import('./paginas/menupapita/menupapita.module').then( m => m.MenupapitaPageModule)
+  },
+
+
 ];
 
 @NgModule({
