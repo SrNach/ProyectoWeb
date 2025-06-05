@@ -15,6 +15,15 @@ app.use(cors({
 }));
 app.use(cors());
 
+// API
+const BurgerMenu = require("./apidata.json");
+//console.log(BurgerMenu);
+const ruta=express.Router();
+
+ruta.get("",(req,res)=>{
+    res.status(200).json(BurgerMenu)
+});
+app.use("/api",ruta);
 
 app.use(express.json());
 
