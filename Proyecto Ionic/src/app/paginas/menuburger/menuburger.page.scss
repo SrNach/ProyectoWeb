@@ -45,6 +45,32 @@ p{
   --background: #ffe3bb;
 }
 
+#itemscontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  gap: 6rem;
+  padding-top: 2rem;
+  padding-left: 5.5rem;
+}
+
+.itemcombo{
+  display:flex;
+  flex-direction: column;
+  --background: ;
+  --color: #ffffff;
+  --width: 2rem;
+  --height: 2rem;
+}
+
+.imgcombo{
+  width: 16rem;
+  height: 16rem;
+  border-radius: 20% !important;
+  object-fit: cover;
+}
 
 @media (max-width: 600px) {
   .menuitem {
