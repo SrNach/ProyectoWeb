@@ -2,19 +2,26 @@ const express = require('express');
 const userRoutes = require('./DB/routes/userRoute');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:8100'];
 
 const app = express();
 const PORT = 3000;
 const SECRET = '12345';
-app.use('/usuarios', userRoutes);
+
 
 // Configuración CORS: solo permite frontend en localhost:3000
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
-app.use(cors());
-
+app.use(express.json());
+app.use('/usuarios', userRoutes);
 // API
 const BurgerMenu = require("./apidata.json");
 //console.log(BurgerMenu);
@@ -25,7 +32,7 @@ ruta.get("",(req,res)=>{
 });
 app.use("/api",ruta);
 
-app.use(express.json());
+
 
 // Ruta pública de login (autenticación)
 app.post('/login', (req, res) => {
