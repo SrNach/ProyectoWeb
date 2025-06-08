@@ -7,8 +7,8 @@
   </div>
 
   <div id="container">      
-    <ion-input label="Correo electrónico:"></ion-input>
-    <ion-input type="password" label="Contraseña:" required>
+    <ion-input label="Correo electrónico:"[(ngModel)]="correo" required clearInput></ion-input>
+    <ion-input type="password" [(ngModel)]="password" required clearInput label="Contraseña:" required>
       <ion-input-password-toggle slot="end"></ion-input-password-toggle>
     </ion-input>
     <ion-button (click)="goToHome()"> Iniciar sesión </ion-button>
