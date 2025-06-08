@@ -11,8 +11,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
   
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
+  login(username: string, passw: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/login`, { username, passw });
   }
   getPerfil(token: string): Observable<any> {
     const headers = new HttpHeaders({

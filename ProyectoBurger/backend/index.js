@@ -8,6 +8,12 @@ const app = express();
 const PORT = 3000;
 const SECRET = '12345';
 
+//const db = require('./DB/config/db.js');
+//const mysql = require('mysql2');
+
+const authRoute = require('./DB/routes/authRoute'); // Añade esta línea
+
+//app.use('/users', userRoutes);
 
 // Configuración CORS: solo permite frontend en localhost:3000
 app.use(cors({
@@ -21,6 +27,7 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+app.use('/auth', authRoute);
 app.use('/usuarios', userRoutes);
 // API
 const BurgerMenu = require("./apidata.json");
@@ -35,18 +42,8 @@ app.use("/api",ruta);
 
 
 
-// Ruta pública de login (autenticación)
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
 
-  // Simulación simple (en producción usa base de datos)
-  if (username === 'admin' && password === '1234') {
-    const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '1h' });
-    res.json({ token });
-  } else {
-    res.status(401).json({ mensaje: 'Credenciales inválidas' });
-  }
-});
+
 
 // Middleware para verificar token (autorización)
 function verificarToken(req, res, next) {

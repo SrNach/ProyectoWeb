@@ -8,20 +8,42 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./login.page.scss'],
   standalone: false
 })
-
 export class LoginPage implements OnInit {
-  usuarios: any[] = [];
   password: string = '';
   correo: string = '';
 
-
   constructor(
     private router: Router,
-    private api: ApiService
+    private api: ApiService,
   ) { }
+
   ngOnInit() {
   }
   
+  login() {
+    console.log('Datos enviados desde frontend:', this.correo, this.password);
+    
+    if (!this.correo || !this.password) {
+      alert('Por favor ingresa correo y contraseña');
+      return;
+    }
+
+    this.api.login(this.correo, this.password).subscribe({
+      next: (res: any) => {
+        localStorage.setItem('token', res.token);
+        // Guarda también el correo si lo necesitas
+        if (res.correo) {
+          localStorage.setItem('correo', res.correo);
+        }
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.error('Error en login:', err);
+        alert('Correo o contraseña incorrectos');
+      }
+    });
+  }
+
   goToHome() {
     this.router.navigate(['/home']);
   }
@@ -29,5 +51,4 @@ export class LoginPage implements OnInit {
   goToSignUp() {
     this.router.navigate(['/signup']);
   }
-
 }
