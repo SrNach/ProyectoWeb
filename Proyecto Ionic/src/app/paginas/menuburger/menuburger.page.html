@@ -26,25 +26,26 @@
   </div>
 
   <div id = "itemscontainer">
-    <div class="itemcombo">
-        <img src="assets/img/burgers/combo1.JPG" alt="combo1" class="imgcombo" />
-        <p> Hamburguesa clásica xd </p>
+    <div class="itemcombo" (click)="goToProductDetail(productos[0])">
+        <img src={{productos[0]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[0]?.Nombre}} </p>
     </div>
 
-    <div class="itemcombo">
-        <img src="assets/img/burgers/combo2.JPG" alt="combo1" class="imgcombo" />
-        <p> Combo 1 xd </p>
+    <div class="itemcombo" (click)="goToProductDetail(productos[1])">
+        <img src={{productos[1]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[1]?.Nombre}} </p>
     </div>
 
-    <div class="itemcombo">
-        <img src="assets/img/burgers/combo3.JPG" alt="combo1" class="imgcombo" />
-        <p> Combo 1 xd </p>
+    <div class="itemcombo" (click)="goToProductDetail(productos[2])">
+        <img src={{productos[2]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[2]?.Nombre}} </p>
     </div>
 
-    <div class="itemcombo">
-        <img src="assets/img/burgers/combo4.JPG" alt="combo1" class="imgcombo" />
-        <p> Combo 1 xd </p>
+    <div class="itemcombo" (click)="goToProductDetail(productos[3])">
+        <img src={{productos[3]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[3]?.Nombre}} </p>
     </div>
 
   </div>
+
 </ion-content>

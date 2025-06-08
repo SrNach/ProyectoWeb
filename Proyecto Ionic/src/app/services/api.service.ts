@@ -6,13 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  private apiUrl = 'http://localhost:3000/data';
+
   constructor(private http: HttpClient) {}
 
   getDatos(): Observable<any> {
-    return this.http.get('assets/apidata.json');
-  }
-
-  postDatos(data: any): Observable<any> {
-    return this.http.post('assets/apidata.json', data);
+    return this.http.get<any>(this.apiUrl);
   }
 }

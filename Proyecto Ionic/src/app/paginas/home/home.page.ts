@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,23 +7,27 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
-  
-  goToProfile(){
-    this.router.navigate(['/profile']);
-
+  constructor(
+    private router: Router,
+  ) {}
+  ngOnInit() {
   }
-  goToMenuCombo(){
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+
+  goToMenuCombo() {
     this.router.navigate(['/menucombo']);
   }
-  goToMenuBurger(){
+
+  goToMenuBurger() {
     this.router.navigate(['/menuburger']);
   }
-  goToMenuPapita(){
+
+  goToMenuPapita() {
     this.router.navigate(['/menupapita']);
   }
-
-
 }
