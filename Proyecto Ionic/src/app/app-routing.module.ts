@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'menuprod',
     loadChildren: () => import('./paginas/menucombo/menucombo.module').then( m => m.MenucomboPageModule)
-  },  {
+  },
+  {
     path: 'menucombo',
     loadChildren: () => import('./paginas/menucombo/menucombo.module').then( m => m.MenucomboPageModule)
   },
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'menupapita',
     loadChildren: () => import('./paginas/menupapita/menupapita.module').then( m => m.MenupapitaPageModule)
+  },
+  {
+    path: 'productdetail',
+    loadChildren: () => import('./paginas/productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
   },
 
 

@@ -1,0 +1,34 @@
+ion-content {
+    --background: #d8d8d8 !important;
+}
+
+#detailcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10rem;
+    padding: 6rem;
+}
+
+.detailtext {
+    width: 50%;
+    height: 50%;
+    color: #000;
+    gap: 10rem;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+p{
+    font-size: 2rem;
+}
+
+.imgdetail{
+    width: 35%;
+    height: 35%;
+    border-radius: 2rem;
+}

@@ -16,7 +16,9 @@ export class MenucomboPage implements OnInit {
   goToMenuPapita(){
     this.router.navigate(['/menupapita']);
   }
-
+  goToProductDetail(){
+    this.router.navigate(['/productdetail']);
+  }
   ngOnInit() {
   }
 
