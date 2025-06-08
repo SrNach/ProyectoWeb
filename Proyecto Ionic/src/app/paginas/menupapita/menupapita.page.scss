@@ -70,21 +70,51 @@ p{
 
 
 @media (max-width: 600px) {
+  #menucontainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    width: 100%;
+  }
+
+  #itemscontainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 0.5rem;
+    width: 100%;
+  }
+
+  .itemcombo {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .imgcombo {
+    width: 90vw;
+    max-width: 16rem;
+    height: auto;
+    border-radius: 20%;
+    margin-bottom: 0.5rem;
+  }
+
   .menuitem {
     width: 6rem;
     height: 6rem;
   }
-  #menucontainer {
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+
+  .imgboton {
+    width: 4rem;
+    height: 4rem;
   }
-  .imgboton{
-  width: 4rem;
-  height: 4rem;
+
+  p {
+    font-size: 0.9rem;
   }
-  p{
-    font-size: 0.7rem;
-    }
-  
 }

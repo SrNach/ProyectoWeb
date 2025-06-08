@@ -13,10 +13,22 @@ ion-content {
 }
 
 .detailtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
     width: 50%;
     height: 50%;
     color: #000;
-    gap: 10rem;
+    gap: 0.8rem;
+}
+
+ion-button{
+    --background: #ffb300 !important;
+    --color: #000000 !important;
+    --color-hover: #4e4e4e !important;
+    --border-radius: 10px    !important;
+    font-size: 1rem;
+    text-transform: capitalize;
 }
 
 h1{
@@ -31,4 +43,31 @@ p{
     width: 35%;
     height: 35%;
     border-radius: 2rem;
+}
+
+@media (max-width: 600px) {
+  #detailcontainer {
+    flex-direction: column;
+    gap: 2rem;         // Menor espacio entre imagen y texto
+    padding: 1.5rem;   // Menos padding en móvil
+    align-items: center;
+    text-align: center;
+  }
+  .imgdetail {
+    width: 90vw;
+    height: auto;
+    max-width: 350px;
+    margin-bottom: 1rem;
+  }
+  .detailtext {
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
 }
