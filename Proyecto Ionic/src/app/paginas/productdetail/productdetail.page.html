@@ -1,0 +1,17 @@
+<app-header [guest]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="detailcontainer">
+    <img [src]=imagePath alt="combo1" class="imgdetail" />
+
+    <div class="detailtext">
+      <h1>{{ productName }}</h1>
+      <p>{{ productDescription }}</p>
+      <p class="price">{{ productPrice | currency: '$' }}</p>
+      <ion-button>Add to Cart</ion-button>
+    </div>
+  </div>
+
+
+  <div id="footer"></div>
+</ion-content>
