@@ -20,12 +20,16 @@ const BurgerMenu = require("./apidata.json");
 //console.log(BurgerMenu);
 const ruta=express.Router();
 
-ruta.get("",(req,res)=>{
-    res.status(200).json(BurgerMenu)
+app.get('/data', (req, res) => {
+  res.sendFile(__dirname + '/apidata.json');
+  res.status(200).json(BurgerMenu)
 });
+
 app.use("/api",ruta);
 
 app.use(express.json());
+
+
 
 // Ruta pública de login (autenticación)
 app.post('/login', (req, res) => {

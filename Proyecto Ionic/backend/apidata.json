@@ -1,15 +1,14 @@
 [
-    { "id": 1, "tipo": 1, "Nombre": "Combo Duo", "Precio": 9000, "Descripcion": "El combo contiene: 2 Hamburguesas a elección, 2 papas fritas medianas y 2 bebidas"},
-    { "id": 2, "tipo": 1, "Nombre": "Combo Familiar", "Precio": 15500, "Descripcion": "El combo contiene: 4 Hamburguesas a elección, 4 papas fritas medianas y 4 bebidas"},
-    { "id": 3, "tipo": 1, "Nombre": "Combo Niños", "Precio": 4000, "Descripcion": "Hamburguesa pequeña con carne de res, queso cheddar, lechuga y tomate, acompañada de papas fritas pequeñas y bebida pequeña"},
-    { "id": 4, "tipo": 2, "Nombre": "Hamburguesa clásica", "Precio": 5000, "Descripcion": "Hamburguesa con carne de res, palta, tomate, mayonesa y lechuga"},
-    { "id": 5, "tipo": 2, "Nombre": "Hamburguesa bananera", "Precio": 5400, "Descripcion": "Hambuerguesa con carne de res, rebanadas de plátano frito, cebolla caramelizada, queso cheddar y aderezo de la casa"},
-    { "id": 6, "tipo": 2, "Nombre": "Hamburguesa vegana", "Precio": 5000, "Descripcion": "Pan de hamburguesa con pepino, tomate, cebolla y berenjena asada"},
-    { "id": 7, "tipo": 2, "Nombre": "Hamburguesa de serpiente", "Precio": 7000, "Descripcion": "Hamburguesa con carne de serpiente, cebolla de Perú, queso cheddar, chocolate blanco, sal de mar de Bolivia y aderezo de la casa"},
-    { "id": 8, "tipo": 3, "Nombre": "Bebida mediana", "Precio": 1200, "Descripcion": "Bebida a elección de 500 ml"},
-    { "id": 9, "tipo": 3, "Nombre": "Bebida grande", "Precio": 1600, "Descripcion": "Bebida a elección de 750 ml"},
-    { "id": 10, "tipo": 3, "Nombre": "Papas fritas mediana", "Precio": 1500, "Descripcion": "200 gr de Papas fritas"},
-    { "id": 11, "tipo": 3, "Nombre": "Papas fritas grandes", "Precio": 2300, "Descripcion": "400 gr de Papas fritas"},
-    { "id": 12, "tipo": 3, "Nombre": "Helado soft", "Precio": 2000, "Descripcion": "Helado soft mixto de vainilla y chocolate"}
+    { "id": 1, "tipo": 1, "Nombre": "Combo Duo", "Precio": 9000, "Descripcion": "El combo contiene: 2 Hamburguesas a elección, 2 papas fritas medianas y 2 bebidas","RutaImagen": "assets/img/burgers/combo1.JPG"},
+    { "id": 2, "tipo": 1, "Nombre": "Combo Familiar", "Precio": 15500, "Descripcion": "El combo contiene: 4 Hamburguesas a elección, 4 papas fritas medianas y 4 bebidas","RutaImagen": "assets/img/burgers/combo1.JPG"},
+    { "id": 3, "tipo": 1, "Nombre": "Combo Niños", "Precio": 4000, "Descripcion": "Hamburguesa pequeña con carne de res, queso cheddar, lechuga y tomate, acompañada de papas fritas pequeñas y bebida pequeña","RutaImagen": "assets/img/burgers/combo4.JPG"},
+    { "id": 4, "tipo": 2, "Nombre": "Hamburguesa clásica", "Precio": 5000, "Descripcion": "Hamburguesa con carne de res, palta, tomate, mayonesa y lechuga","RutaImagen": "assets/img/burgers/combo4.JPG"},
+    { "id": 5, "tipo": 2, "Nombre": "Hamburguesa bananera", "Precio": 5400, "Descripcion": "Hambuerguesa con carne de res, rebanadas de plátano frito, cebolla caramelizada, queso cheddar y aderezo de la casa","RutaImagen": "assets/img/burgers/combo3.JPG"},
+    { "id": 6, "tipo": 2, "Nombre": "Hamburguesa vegana", "Precio": 5000, "Descripcion": "Pan de hamburguesa con pepino, tomate, cebolla y berenjena asada","RutaImagen": "assets/img/burgers/combo1.JPG"},
+    { "id": 7, "tipo": 2, "Nombre": "Hamburguesa de serpiente", "Precio": 7000, "Descripcion": "Hamburguesa con carne de serpiente, cebolla de Perú, queso cheddar, chocolate blanco, sal de mar de Bolivia y aderezo de la casa","RutaImagen": "assets/img/burgers/combo2.JPG"},
+    { "id": 8, "tipo": 3, "Nombre": "Bebida mediana", "Precio": 1200, "Descripcion": "Bebida a elección de 500 ml","RutaImagen": "assets/img/burgers/bebida.jpeg"},
+    { "id": 9, "tipo": 3, "Nombre": "Bebida grande", "Precio": 1600, "Descripcion": "Bebida a elección de 750 ml","RutaImagen": "assets/img/burgers/bebida.jpeg"},
+    { "id": 10, "tipo": 3, "Nombre": "Papas fritas mediana", "Precio": 1500, "Descripcion": "200 gr de Papas fritas","RutaImagen": "assets/img/burgers/papas.JPG"},
+    { "id": 11, "tipo": 3, "Nombre": "Papas fritas grandes", "Precio": 2300, "Descripcion": "400 gr de Papas fritas","RutaImagen": "assets/img/burgers/papas.JPG"}
 
 ]

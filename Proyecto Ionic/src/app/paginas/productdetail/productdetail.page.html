@@ -2,13 +2,13 @@
 
 <ion-content [fullscreen]="true">
   <div id="detailcontainer">
-    <img [src]=imagePath alt="combo1" class="imgdetail" />
+    <img src={{producto?.RutaImagen}} alt="combo1" class="imgdetail" />
 
     <div class="detailtext">
-      <h1>{{ productName }}</h1>
-      <p>{{ productDescription }}</p>
-      <p class="price">{{ productPrice | currency: '$' }}</p>
-      <ion-button>Add to Cart</ion-button>
+      <h1>{{ producto?.Nombre }}</h1>
+      <p>{{ producto?.Descripcion }}</p>
+      <p class="price">${{ producto?.Precio}}</p>
+      <ion-button>Añadir a carrito</ion-button>
     </div>
   </div>
 

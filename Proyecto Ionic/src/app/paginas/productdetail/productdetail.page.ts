@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productdetail',
@@ -7,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class ProductdetailPage implements OnInit {
-  imagePath: string = 'assets/img/burgers/combo1.JPG';
-  productName: string = 'Delicious Burger';
-  productDescription: string = 'A tasty burger with fresh ingredients and a secret sauce.';
-  productPrice: number = 9.99;
+  producto: any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.producto = navigation?.extras?.state?.['producto'];
   }
 }

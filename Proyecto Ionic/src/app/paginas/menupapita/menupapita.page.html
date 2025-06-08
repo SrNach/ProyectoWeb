@@ -24,14 +24,31 @@
       <p>Para acompañar</p>
     </div>
   </div>
+
+
   <div id="itemscontainer">
-    <div class="itemcombo">
-      <img src="assets/img/burgers/papas.JPG" alt="acomp1" class="imgcombo" />
-      <p> Papitas </p>
+    <div class="itemcombo" (click)="goToProductDetail(productos[0])">
+      <img src={{productos[0]?.RutaImagen}} alt="acomp1" class="imgcombo" />
+      <p> {{productos[0]?.Nombre}} </p>
     </div>
-    <div class="itemcombo">
-      <img src="assets/img/burgers/bebida.jpeg" alt="acomp2" class="imgcombo" />
-      <p> Bebida </p>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[1])">
+      <img src={{productos[1]?.RutaImagen}} alt="acomp2" class="imgcombo" />
+      <p> {{productos[1]?.Nombre}} </p>
     </div>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[2])">
+      <img src={{productos[2]?.RutaImagen}} alt="acomp2" class="imgcombo" />
+      <p> {{productos[2]?.Nombre}} </p>
+    </div>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[3])">
+      <img src={{productos[3]?.RutaImagen}} alt="acomp2" class="imgcombo" />
+      <p> {{productos[3]?.Nombre}} </p>
+    </div>
+    
   </div>
+
+  
+
 </ion-content>
