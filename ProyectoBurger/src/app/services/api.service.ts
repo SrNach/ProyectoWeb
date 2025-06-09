@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,25 +8,25 @@ import { Observable } from 'rxjs';
 export class ApiService {
   private apiUrl = 'http://localhost:3000';
 
-
   constructor(private http: HttpClient) {}
   
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
+  login(correo: string, passw: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/login`, { correo, passw });
   }
-  getPerfil(token: string): Observable<any> {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`
-    });
-    return this.http.get(`${this.apiUrl}/perfil`, { headers });
+  register(userData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/usuarios/register`, userData);
   }
+
+  getPerfil(): Observable<any> {
+    // Versión simplificada que usa el interceptor
+    return this.http.get(`${this.apiUrl}/auth/perfil`);
+  }
+
   getMenu(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/data`);
+    return this.http.get(`${this.apiUrl}/api/data`);
   }
+
   getUsuarios(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/usuarios`);
-  }
-  getDatos(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/data`);
+    return this.http.get(`${this.apiUrl}/api/usuarios`);
   }
 }

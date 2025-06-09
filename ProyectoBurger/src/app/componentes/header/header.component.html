@@ -4,20 +4,14 @@
       <img src="assets/img/burgerlogo.png" alt="Logo" class="logo" (click)="goToHome()"/>
       <ion-title class="headertext">The Burger</ion-title> 
     </div>
-    <ion-buttons slot="end" *ngIf="logged">
-      <ion-button fill="solid" class="custom-button" (click)="goToSignUp()">Perfil</ion-button>
-    </ion-buttons>
 
-    <ion-buttons slot="end" *ngIf="guest">
+    <ion-buttons slot="end" *ngIf="!isAuthenticated">
       <ion-button fill="solid" class="custom-button" (click)="goToSignUp()">Registrarse</ion-button>
       <ion-button fill="solid" class="custom-button" (click)="goToLogin()">Iniciar sesión</ion-button>
     </ion-buttons>
 
-    <ion-buttons slot="end" *ngIf="signing">
-      <ion-button fill="solid" class="custom-button" (click)="goToHome()">Volver a inicio</ion-button>
-    </ion-buttons>
-
-    <ion-buttons slot="end" *ngIf="pedido">
+    <ion-buttons slot="end" *ngIf="isAuthenticated">
+      <ion-button fill="solid" class="custom-button" (click)="goToProfile()">Mi cuenta</ion-button>
     </ion-buttons>
 
   </ion-toolbar>

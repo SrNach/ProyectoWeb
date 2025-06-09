@@ -1,4 +1,4 @@
-<app-header [signing]="true"></app-header>
+<app-header></app-header>
 
 
 <ion-content [fullscreen]="true">
@@ -8,10 +8,10 @@
 
   <div id="container">      
     <ion-input label="Correo electrónico:"[(ngModel)]="correo" required clearInput></ion-input>
-    <ion-input type="password" [(ngModel)]="password" required clearInput label="Contraseña:" required>
+    <ion-input type="password" [(ngModel)]="passw" required clearInput label="Contraseña:" required>
       <ion-input-password-toggle slot="end"></ion-input-password-toggle>
     </ion-input>
-    <ion-button (click)="goToHome()"> Iniciar sesión </ion-button>
+    <ion-button (click)="login()"> Iniciar sesión </ion-button>
     <p class="underdot" routerLink="/signup"> ¿No tienes cuenta? Regístrate </p>
   </div>
 
