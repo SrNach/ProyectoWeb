@@ -24,7 +24,7 @@ Integrantes:
 - Implementación incompleta de front-end en Ionic + Angular.
 - Implementación de server back-end.
 - Definición de la navegación entre páginas y UI/UX.
-- Prototipos UI/UX en Figma (Enlace: ).
+- Prototipos UI/UX en Figma (Enlace: https://www.figma.com/design/Dy0qfMYcnPz3UbSHNnigGP/The-Burger-UI?node-id=3334-171&t=h3C1BdvqGcIIsMNF-1).
 - Base de datos en Usuarios.sql.
 - API REST local en apidata.json.
 - Pruebas POST y GET de API y DB en TheBurgersTest.json.
