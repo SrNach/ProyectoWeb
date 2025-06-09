@@ -1,7 +1,9 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IonicModule} from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,26 +12,51 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, IonicModule]
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  isAuthenticated = false;
+  private authSub!: Subscription;
 
-  @Input() signing: boolean = false;
-  @Input() guest: boolean = false;
-  @Input() pedido: boolean = false;
-  @Input() logged: boolean = false;
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {}
-
-  goToSignUp(){
-    this.router.navigate(['/signup']);
+  ngOnInit() {
+    // Verificación inicial
+    this.isAuthenticated = this.authService.getAuthState();
+    
+    // Suscripción a cambios
+    this.authSub = this.authService.currentAuthState.subscribe(
+      state => this.isAuthenticated = state
+    );
   }
 
-  goToLogin(){
+  ngOnDestroy() {
+    this.authSub?.unsubscribe();
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  goToLogin() {
     this.router.navigate(['/login']);
   }
 
-  goToHome(){
+  goToSignUp() {
+    this.router.navigate(['/signup']);
+  }
+
+  goToProfile() {
+    if (this.isAuthenticated) {
+      this.router.navigate(['/profile']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  logout() {
+    this.authService.logout();
     this.router.navigate(['/home']);
   }
 }

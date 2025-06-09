@@ -10,30 +10,39 @@ Integrantes:
 - Ignacio Silva Rubio
 - Nicolás Torfan Bdewi
 - Bruno Toro Carrasco
-  
-## Características actuales
-- Implementación del diseño básico en Ionic + Angular.
-- Definición de la navegación entre páginas.
-- Prototipos UI/UX en Figma en formato pdf.
 
 ## Preparación previa
 - Se requiere tener Node.js instalado.
 - Se requiere tener Ionic /CLI instalado.
 - Se requiere tener Angular /CLI instalado.
 - Se requiere de un editor de código como VSCode.
+- Se requiere tener Express.js instalado.
+- Se requiere tener MySQL Workbench o XAMPP Control para el alojamiento de la base de datos.
+- (Opcional) Tener Postman o Insomnia para las pruebas de las APIs.
+
+## Características actuales
+- Implementación incompleta de front-end en Ionic + Angular.
+- Implementación de server back-end.
+- Definición de la navegación entre páginas y UI/UX.
+- Prototipos UI/UX en Figma (Enlace: ).
+- Base de datos en Usuarios.sql.
+- API REST local en apidata.json.
+- Pruebas POST y GET de API y DB en TheBurgersTest.json.
 
 ## Instrucciones de uso
-- Descargar carpeta "ProyectoWeb" del repositorio.
+- Descargar carpeta "ProyectoWeb" del repositorio e ingresar a /ProyectoBurger.
 - Abrir carpeta con VSCode o similares.
 - Utilizar el comando "npm install" para instalar dependencias.
-- Iniciar el proyecto con el comando "ionic serve".
+- Importar Usuarios.sql a herramienta de alojamiento de bases de datos.
+- Abrir terminal e iniciar servidor backend con "node backend/index.js".
+- Abrir otra terminal e iniciar el proyecto con "ionic serve".
+- (Opcional) Se puede probar las pruebas con Postman o Insomnia.
 
 ## Requerimientos funcionales
 Gestión de cuenta
-1. El usuario debe poder registrarse con correo electrónico, nombre de usuario, contraseña.
+1. El usuario debe poder registrarse con correo electrónico, nombre de usuario, dirección, número telefónico, contraseña y confirmación contraseña.
 2. El usuario debe poder iniciar sesión con correo electrónico y contraseña.
 3. El administrador debe poder iniciar sesión con su correo y contraseña.
-4. Los usuarios deben poder recuperar su contraseña.
 
 Gestión de productos y pedidos
 1. El usuario debe poder ver detalles de los productos (Descripción, imagen, precio).
@@ -44,23 +53,32 @@ Gestión de productos y pedidos
 6. El usuario debe poder realizar una búsqueda de productos con filtros.
 7. El administrador necesita ser capaz de agregar productos al sistema.
 8. El administrador necesita poder eliminar productos del sistema.
-9. El administrador necesita poder modificar productos del sistema (precio, ingredientes, nombre, etc.).
-
-Gestión del pedido
-1. El usuario debe poder ver los detalles del pedido antes de pagar. 
-2. El usuario debe poder modificar su pedido antes de pagar.
-3. El usuario debe ser capaz de hacer un seguimiento a su pedido.
 
 Sistema de Puntos
 1. El usuario debe poder acumular puntos de la aplicación al realizar compras.
 2. El usuario debe ser capaz de canjear puntos por productos o combos del sistema.
 
 ## Requerimientos no funcionales
-1. El sistema debe contar con una interfaz de usuario intuitiva, amigable y fácil de navegar.
+1. El sistema debe contar con una interfaz de usuario intuitiva, amigable y fácil de navegar, con transiciones claras y colores simples y contrastados.
 2. El sistema debe contrar con una interfaz de usuario adaptable para aplicación web y móvil.
-3. El sistema cuenta con una rapidez de carga de menos de 2 segundos.
 4. El sistema debe realizar las interacciones de productos y/o eventos de manera fluida.
 5. El sistema debe contar con una base de datos MySQL.
+6. El sistema debe contar con una API REST con los datos de los menús de la tienda e-commerce. 
+
+## Experiencia de usuario
+Se busca que el usuario se sienta tranquilo y seguro con The Burgers, implementando una interfaz simple y fácil de entender y navegar, con indicaciones claras de que hace cada elemento de la página de e-commerce. The Burgers contiene colores y elementos simples de diferenciar, aumentando la accesibilidad. Se busca que el usuario se sienta confiado con sus acciones, dándole énfasis a la interactividad y navegación. Los colores de la página son simples y contrastan mucho entre si, teniendo un fondo blanco que mantiene una pantalla limpia. The Burgers está preparada para dispositivos móviles, ajustando sus elementos según el tamaño de la pantalla.
+
+## Definición de navegación
+The Burgers cuenta con distintas pantallas:
+1. Home: Pantalla principal, donde se puede ingresar a los menús de combos, hamburguesas y acompañamientos.
+2. Login: Inicio de sesión, que aparecerá en el Header cuando el usuario no esté con la cuenta iniciada, desde esta pantalla se puede ir a la página de registro (Si se da al botón después de rellenar los datos de los campos, se puede iniciar sesión).
+3. SignUp: Registrarse, que aparecerá en el Header cuando el usuario no esté con la cuenta iniciada, desde esta pantalla se puede ir a la pantalla de inicio de sesión (Si se da al botón después de rellenar los datos de los campos, se puede registrar). 
+4. MenuCombo: Contiene el menú de los combos, se puede navegar a los detalles de los combos, o a los menús de hamburguesas y/o acompañamientos.
+5. MenuBurger: Contiene el menú de las hamburguesas, se puede navegar a los detalles de las hamburguesas, o a los menús de combos y/o acompañamientos.
+6. MenuPapita: Contiene el menú de los acompañamientos, se puede navegar a los detalles de los acompañamientos, o a los menís de combos y/o hamburguesas.
+7. ProductDetail: Contiene la información del producto seleccionado en cualquier menú.
+8. Profile: Contiene los datos de la cuenta con la sesión iniciada. Se puede ingresar desde el Header si ya se inició sesión. Tiene un botón funcional de cerrar sesión.
+
 
 
 

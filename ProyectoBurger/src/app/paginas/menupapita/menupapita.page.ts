@@ -26,7 +26,7 @@ export class MenupapitaPage implements OnInit {
   }
 
   ngOnInit(): void {
-  this.apiService.getDatos().subscribe(data => {
+  this.apiService.getMenu().subscribe((data: any) => {
     this.productos = data;
     this.productos = this.productos.filter(item => item.tipo === 3);
   });

@@ -1,4 +1,4 @@
-<app-header [signing]="true"></app-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
   <div id="titletext">
@@ -7,17 +7,17 @@
 
   <div id="container"> 
     <div id="nametext">
-      <h3>Hola, Nombre Apellido</h3>    
-      <ion-button (click)="goToHome()"> Cerrar sesión </ion-button>
+      <h3>Hola, {{userData.nombre}}</h3>    
+      <ion-button (click)="logout()"> Cerrar sesión </ion-button>
     </div>
 
     <div id="profiledata">
       <h3>Tus datos personales</h3>
-      <p> Correo electrónico: {{email}}</p>
-      <p> Número telefónico: +569 9999 9999</p>
-      <p> Dirección: Redada, Calle Falsa 123</p>
+      <p> Correo electrónico: {{userData.correo}}</p>
+      <p> Número telefónico: {{userData.numero}}</p>
+      <p class="address-text"> Dirección: {{userData.direccion}}</p>
       <br>
-      <ion-button> Cambiar contraseña </ion-button>
+      <!--<ion-button> Cambiar contraseña </ion-button> -->
     </div>
   </div>
 </ion-content>
