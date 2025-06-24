@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'productdetail',
     loadChildren: () => import('./paginas/productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
   },
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./paginas/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
+  },
 
 
 ];
