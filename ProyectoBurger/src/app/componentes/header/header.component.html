@@ -1,18 +1,48 @@
 <ion-header>
   <ion-toolbar>
-    <div class="logo-container">
-      <img src="assets/img/burgerlogo.png" alt="Logo" class="logo" (click)="goToHome()"/>
-      <ion-title class="headertext">The Burger</ion-title> 
+    <div class="header-row">
+      <div class="logo-container">
+        <img src="assets/img/burgerlogo.png" alt="Logo" class="logo" (click)="goToHome()"/>
+        <ion-title class="headertext">The Burger</ion-title> 
+      </div>
+
+      <div class="header-actions">
+        <ion-button fill="clear" (click)="toggleDropdown()">
+          <ion-icon name="cart-outline"></ion-icon>
+          <ion-badge *ngIf="cartItems.length">{{ getTotalQuantity() }}</ion-badge>
+        </ion-button>
+        <ion-buttons *ngIf="!isAuthenticated">
+          <ion-button fill="solid" class="custom-button" (click)="goToSignUp()">Registrarse</ion-button>
+          <ion-button fill="solid" class="custom-button" (click)="goToLogin()">Iniciar sesión</ion-button>
+        </ion-buttons>
+        <ion-buttons *ngIf="isAuthenticated">
+          <ion-button fill="solid" class="custom-button" (click)="goToProfile()">Mi cuenta</ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </ion-toolbar>
+
+  <div *ngIf="dropdownOpen" class="cart-dropdown">
+    <div *ngFor="let item of cartItems" class="cart-item">
+
+      <div class = "item-left">
+        <img [src]="item.image" width="40" height="40">
+        <div class="item-details">
+          <div class="item-name">{{ item.name }}</div>
+          <div class="item-qty">x{{ item.quantity}}</div>
+        </div>
+      </div>
+
+      <div class="item-price">
+        ${{ getItemTotal(item) | number:'1.0-0' }}
+      </div>
     </div>
 
-    <ion-buttons slot="end" *ngIf="!isAuthenticated">
-      <ion-button fill="solid" class="custom-button" (click)="goToSignUp()">Registrarse</ion-button>
-      <ion-button fill="solid" class="custom-button" (click)="goToLogin()">Iniciar sesión</ion-button>
-    </ion-buttons>
+    <div class="total-price">
+      <strong>Total: </strong> ${{ getGrandTotal() | number:'1.0-0' }}
+    </div>
 
-    <ion-buttons slot="end" *ngIf="isAuthenticated">
-      <ion-button fill="solid" class="custom-button" (click)="goToProfile()">Mi cuenta</ion-button>
-    </ion-buttons>
-
-  </ion-toolbar>
+    <ion-button id="botonCart" expand="block" (click)="goToCart()">Ver mi pedido</ion-button>
+  </div>
+  
 </ion-header>

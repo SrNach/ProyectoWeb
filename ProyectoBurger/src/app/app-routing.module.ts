@@ -46,7 +46,19 @@ const routes: Routes = [
   {
     path: 'resetpassword',
     loadChildren: () => import('./paginas/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
+  },  {
+    path: 'carrito',
+    loadChildren: () => import('./paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
   },
+  {
+    path: 'compra',
+    loadChildren: () => import('./paginas/compra/compra.module').then( m => m.CompraPageModule)
+  },
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./paginas/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
+  },
+
 
 
 ];

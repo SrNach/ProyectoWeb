@@ -1,17 +1,32 @@
 const db = require('../config/db');
+const bcrypt = require('bcrypt');
 
 const UserModel = {
   authenticate: (correo, password) => {
-    return new Promise((resolve, reject) => {
-      db.query(
-        'SELECT id, correo, nombre, direccion, numero FROM cliente WHERE correo = ? AND passw = ?',
-        [correo, password],
-        (err, results) => {
-          if (err) return reject(err);
-          resolve(results.length > 0 ? results[0] : null);
+  return new Promise((resolve, reject) => {
+    db.query(
+      'SELECT id, correo, nombre, direccion, numero, passw FROM cliente WHERE correo = ?',
+      [correo],
+      async (err, results) => {
+        if (err) return reject(err);
+        if (results.length === 0) return resolve(null);
+
+        const user = results[0];
+
+        try {
+          const match = await bcrypt.compare(password, user.passw);
+          if (match) {
+            delete user.passw;
+            resolve(user);
+          } else {
+            resolve(null);
+          }
+        } catch (compareErr) {
+          reject(compareErr);
         }
-      );
-    });
+      }
+    );
+  });
   },
 
   getAll: (callback) => {
@@ -19,22 +34,29 @@ const UserModel = {
   },
   
   createUser: (userData) => {
-    return new Promise((resolve, reject) => {
-    const userToCreate = { ...userData };
-    delete userToCreate.id;
-    delete userToCreate.confirmPassw;
+    return new Promise(async (resolve, reject) => {
+      try {
+        const userToCreate = { ...userData };
+        delete userToCreate.id;
+        delete userToCreate.passwConfirm;
 
-    if (!userToCreate.nombre || !userToCreate.correo || !userToCreate.passw) {
-      return reject(new Error('Nombre, correo y contraseña son requeridos'));
-    }
-      db.query(
-        'INSERT INTO cliente SET ?',
-        userData,
-        (err, results) => {
-          if (err) return reject(err);
-          resolve({ id: results.insertId, ...userData });
+        if (!userToCreate.nombre || !userToCreate.correo || !userToCreate.passw || !userToCreate.direccion || !userToCreate.numero) {
+          return reject(new Error('Nombre, correo y contraseña son requeridos'));
         }
-      );
+
+        userToCreate.passw = await bcrypt.hash(userToCreate.passw, 10);
+
+        db.query(
+          'INSERT INTO cliente SET ?',
+          userToCreate,
+          (err, results) => {
+            if (err) return reject(err);
+            resolve({ id: results.insertId, ...userToCreate, passw: undefined });
+          }
+        );
+      } catch (error) {
+        reject(error);
+      }
     });
   }
 };

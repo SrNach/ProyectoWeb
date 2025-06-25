@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<ion-content  [fullscreen]="true">
+
+  <div id="titletext">
+    <ion-title>Tu pedido</ion-title>
+  </div>
+
+  <ion-list *ngIf="cartItems.length; else emptyCart">
+    <ion-item *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <img class="itemImage" [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>Precio: ${{ getItemTotal(item) | number:'1.0-0' }}</p>
+      </ion-label>
+
+      <div slot="end" class="quantity-control">
+        <ion-button size="small" fill="clear" (click)="decreaseQuantity(item)">-</ion-button>
+        <span>{{ item.quantity }}</span>
+        <ion-button size="small" fill="clear" (click)="increaseQuantity(item)">+</ion-button>
+      </div>
+
+      <ion-button slot="end" color="danger" (click)="removeItem(item)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #emptyCart>
+    <p class="emptyCart">Tu carrito está vacío.</p>
+  </ng-template>
+
+  <div *ngIf="cartItems.length" class="cartTotal">
+    <h2 id="totalPrice">Total: ${{ getGrandTotal() | number:'1.0-0' }}</h2>
+    <ion-button class="botones" id="botonPagar" expand="block" (click)="goToCompra()">Pagar</ion-button>
+  </div>
+
+  <ion-button expand="block" class="botones" id="botonMenu" (click)="goToMenu()">Seguir comprando</ion-button>
+</ion-content>

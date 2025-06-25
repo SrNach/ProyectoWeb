@@ -34,11 +34,11 @@ const authController = {
           }
         });
       } else {
-        return res.status(401).json({ mensaje: 'Correo o contraseña incorrectos' });
+        return res.status(401).json({ message: 'Correo o contraseña incorrectos' });
       }
     } catch (error) {
       console.error('Error en login:', error);
-      return res.status(500).json({ mensaje: 'Error del servidor' });
+      return res.status(500).json({ message: 'Error del servidor' });
     }
   },
 
