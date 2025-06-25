@@ -1,5 +1,28 @@
 ion-toolbar{
     --background: #1f1f1f !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ion-toolbar > div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Esto es clave */
+  padding-right: 1rem;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 ion-buttons{
@@ -10,12 +33,14 @@ ion-buttons{
 .headertext{
     font-size: 150%;
     color:#ffffff;
+    padding-left: -1rem;
 }
 
 .logo-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-left: 0.5rem;
+    //flex-direction: row;
     margin: 5px;
 }
 
@@ -23,7 +48,6 @@ ion-buttons{
     width: 2.5rem;
     height: 2.5rem;
     margin: 1%;
-    margin-left: 3%;
     height: auto;
     cursor: pointer;
 }
@@ -37,14 +61,98 @@ ion-buttons{
     text-transform: capitalize;
 }
 
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  z-index: 999;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 450px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.cart-dropdown .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 0.3rem;
+}
+
+.item-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.total-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-qty {
+  font-size: 14px;
+  color: gray;
+}
+
+.item-price {
+  //font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.cart-dropdown .item img {
+  border-radius: 5px;
+}
+
+#botonCart{
+    --background: #ffb300 !important;
+    --color: #000000 !important;
+    --color-hover: #4e4e4e !important;
+    --border-radius: 10px    !important;
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
 @media(max-width: 480px) {
+    .logo-container{
+        max-width: 50%;
+        flex: 1;
+        gap: 0.1rem;
+    }
+
     .headertext{
         font-size: 1rem;
+        white-space: nowrap;
     }
+
     .logo{
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
+        margin-right: -0.8rem;
     }
+
     .custom-button{
         --background: #ffffff !important;
         --color: #000000 !important;
@@ -52,7 +160,63 @@ ion-buttons{
         --border-radius: 10px    !important;
         font-size: 0.7rem;
         padding: 0.3rem 0rem;
-        margin: 0;
+        margin: -0.1rem;
         box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .cart-dropdown {
+    width: 350px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    }
+
+    .cart-dropdown .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 0.3rem;
+    }
+
+
+    .total-price{
+        font-size: 0.8rem;
+    }
+
+    .item-name {
+    font-weight: 500;
+    }
+
+    .item-qty {
+    font-size: 0.7rem;
+    }
+
+    .item-price {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    }
+
+    .cart-dropdown .item img {
+    border-radius: 5px;
+    }
+
+    #botonCart{
+        --background: #ffb300 !important;
+        --color: #000000 !important;
+        --color-hover: #4e4e4e !important;
+        --border-radius: 10px    !important;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    .header-actions {
+        flex: 1;
+        justify-content: flex-end;
+        gap: 2px;
+        //padding-right: 0.5rem;
     }
 }

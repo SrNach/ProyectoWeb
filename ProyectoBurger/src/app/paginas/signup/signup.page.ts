@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -13,6 +14,7 @@ export class SignupPage implements OnInit {
     nombre: '',
     correo: '',
     passw: '',
+    passwConfirm: '',
     direccion: '',
     numero: ''
   };
@@ -22,24 +24,26 @@ export class SignupPage implements OnInit {
   }
     constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) {}
 
   register() {
-    if (!this.userData.nombre || !this.userData.correo || !this.userData.passw) {
-      alert('Por favor, completa todos los campos obligatorios.');
-      return;
+    if (!this.userData.nombre || !this.userData.correo || !this.userData.passw || !this.userData.passwConfirm || !this.userData.direccion || !this.userData.numero) {
+      this.mostrarToast('Por favor completa todos los campos', 'danger');
+      return
     }
 
     this.apiService.register(this.userData).subscribe({
       next: (response) => {
         if (response.success) {
+          this.mostrarToast('Usuario registrado exitosamente', 'success');
           this.router.navigate(['/login']);
         }
       },
       error: (err) => {
-        alert('Error al registrar el usuario. Por favor, inténtalo de nuevo.');
-        console.error('Error en registro:', err);
+        console.error('Error completo:', err);
+        this.mostrarToast(err.error?.message || 'Error desconocido', 'danger');
       }
     });
   }
@@ -50,6 +54,16 @@ export class SignupPage implements OnInit {
   
   goToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  async mostrarToast(mensaje: string, color: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      color: color,
+      position: 'top'
+    });
+    await toast.present();
   }
 
 }

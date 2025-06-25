@@ -8,7 +8,7 @@
       <h1>{{ producto?.Nombre }}</h1>
       <p>{{ producto?.Descripcion }}</p>
       <p class="price">${{ producto?.Precio}}</p>
-      <ion-button>Añadir a carrito</ion-button>
+      <ion-button (click)="agregarAlCarrito()">Añadir a carrito</ion-button>
     </div>
   </div>
 

@@ -1,4 +1,7 @@
 const UserModel = require('../models/userModel');
+const sanitizeHtml = require('sanitize-html');
+const validator = require('validator');
+const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
 
 const UserController = {
   index: (req, res) => {
@@ -15,17 +18,32 @@ const UserController = {
     });
   },
 
-    register: async (req, res) => {
+  register: async (req, res) => {
     try {
-      const { nombre, correo, passw, direccion, numero } = req.body;
+      let { nombre, correo, passw, passwConfirm, direccion, numero } = req.body;
       
-      // Validación básica
-      if (!nombre || !correo || !passw) {
+      if (!nombre || !correo || !passw || !passwConfirm || !direccion || !numero) {
         return res.status(400).json({ 
           success: false,
-          message: 'Nombre, correo y contraseña son requeridos' 
+          message: 'No se tienen todos los campos requeridos' 
         });
       }
+
+      nombre = sanitizeHtml(nombre);
+      direccion = sanitizeHtml(direccion);
+
+      if (!validator.isEmail(correo)) {
+        return res.status(400).json({ message: 'El correo ingresado es inválido' });
+      }
+
+      if (!phoneRegex.test(numero)) {
+        return res.status(400).json({ message: 'El número telefónico ingresado es inválido' });
+      }
+
+      if (userData.passw !== userData.passwConfirm) {
+        return res.status(400).json({ message: 'Las contraseñas ingresadas no coinciden' });
+      }
+
 
       const newUser = {
         nombre,
@@ -44,7 +62,7 @@ const UserController = {
           nombre: createdUser.nombre,
           correo: createdUser.correo,
           numero: createdUser.numero,
-          direccion: createdUser.direccion
+          direccion: createdUser.direccion,
         }
       });
     } catch (error) {

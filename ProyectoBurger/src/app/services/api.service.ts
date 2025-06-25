@@ -14,6 +14,7 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/auth/login`, { correo, passw });
   }
   register(userData: any): Observable<any> {
+    //console.log('Datos de usuario a registrar:', userData);
     return this.http.post(`${this.apiUrl}/api/usuarios/register`, userData);
   }
 

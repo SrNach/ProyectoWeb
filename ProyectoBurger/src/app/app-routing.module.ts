@@ -43,6 +43,18 @@ const routes: Routes = [
     path: 'productdetail',
     loadChildren: () => import('./paginas/productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
   },
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./paginas/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
+  },  {
+    path: 'carrito',
+    loadChildren: () => import('./paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
+  {
+    path: 'compra',
+    loadChildren: () => import('./paginas/compra/compra.module').then( m => m.CompraPageModule)
+  },
+
 
 
 ];
