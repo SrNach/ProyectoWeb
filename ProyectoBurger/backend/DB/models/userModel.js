@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const UserModel = {
   authenticate: (correo, password) => {
-  return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
     db.query(
       'SELECT id, correo, nombre, direccion, numero, passw FROM cliente WHERE correo = ?',
       [correo],
@@ -52,6 +52,25 @@ const UserModel = {
           (err, results) => {
             if (err) return reject(err);
             resolve({ id: results.insertId, ...userToCreate, passw: undefined });
+          }
+        );
+      } catch (error) {
+        reject(error);
+      }
+    });
+  },
+
+  updatePassword: (correo, passw) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const hashedPassword = await bcrypt.hash(passw, 10);
+
+        db.query(
+          'UPDATE cliente SET passw = ? WHERE correo = ?',
+          [hashedPassword, correo],
+          (err, result) => {
+            if (err) return reject(err);
+            resolve(result.affectedRows > 0);
           }
         );
       } catch (error) {

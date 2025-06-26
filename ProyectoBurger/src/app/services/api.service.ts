@@ -30,4 +30,22 @@ export class ApiService {
   getUsuarios(): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/usuarios`);
   }
+
+  resetPassword(correo: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/pass-reset`, { correo });
+  }
+
+  verifyResetToken(correo: string, token: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/verify-token`, { correo, token });
+  }
+
+  cambiarPassword(correo: string, passw: string): Observable<any> {
+    if (!correo || !passw) {
+      throw new Error('Todos los campos son obligatorios para cambiar la contraseña');
+    }
+    return this.http.post(`${this.apiUrl}/auth/change-passw`, {
+      correo,
+      passw,
+    });
+  }
 }
