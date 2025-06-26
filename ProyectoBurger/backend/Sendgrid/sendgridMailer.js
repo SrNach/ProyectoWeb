@@ -1,7 +1,8 @@
 const sgMail = require('@sendgrid/mail');
 
-require('dotenv').config();
+const path = require('path');
 
+require('dotenv').config({ path: path.join(__dirname, '.env') }); 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 /**
@@ -9,7 +10,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
  * @param {string} to - Email del destinatario
  * @param {string} token - Token único para reset
  */
-function sendResetEmail(to, token) {
+function sendResetEmail({to, token}) {
   const resetUrl = `http://localhost:4200/reset-password/${token}`;
   const msg = {
     to,
@@ -17,8 +18,8 @@ function sendResetEmail(to, token) {
     subject: 'Restablecimiento de contraseña',
     html: `
       <h2>Recuperación de contraseña</h2>
-      <p>Haz clic en el siguiente enlace para establecer una nueva contraseña:</p>
-      <a href="${resetUrl}">${resetUrl}</a>
+      <p>Ingresa este código para restablecer tu contraseña</p>
+      <a href="${token}">${token}</a>
       <p>Si no solicitaste esto, puedes ignorar este mensaje.</p>
       <p>The Burger.</p>
     `,

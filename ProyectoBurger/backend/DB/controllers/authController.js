@@ -44,7 +44,34 @@ const authController = {
 
   perfil: (req, res) => {
     res.json({ usuario: req.user });
-  }
+  },
+
+  changePassword: async (req, res) => {
+    const { correo, passw } = req.body;
+    
+    try {
+      if (!correo || !passw) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Correo y contraseña son requeridos' 
+        });
+      }
+      console.log("BODY authController ANTES",req.body)
+      const updated = await UserModel.updatePassword(correo, passw);
+      console.log("BODY authController DESPUES",req.body)
+      if (updated) {
+        res.json({ success: true, message: 'Contraseña actualizada' });
+      } else {
+        res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+      }
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: 'Error al cambiar contraseña',
+        //error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      });
+    }
+  },
 
   
 };

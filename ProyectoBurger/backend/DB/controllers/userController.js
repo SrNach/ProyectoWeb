@@ -40,7 +40,7 @@ const UserController = {
         return res.status(400).json({ message: 'El número telefónico ingresado es inválido' });
       }
 
-      if (userData.passw !== userData.passwConfirm) {
+      if (passw !== passwConfirm) {
         return res.status(400).json({ message: 'Las contraseñas ingresadas no coinciden' });
       }
 
