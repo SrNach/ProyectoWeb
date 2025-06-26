@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+  <div id="banner">
+    <ion-button id="bannerbutton" class="defaultbutton" (click)="goToMenuCombo()"> Realizar pedido</ion-button>
+    <p id="bannerdesc">Realiza tu pedido y consigue tus hamburguesas favoritas!</p>
+  </div>
+  <h1 class="subtitle"> Ingresa a nuestro menú </h1>
+  <div id="menucontainer">
+    
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuCombo()">
+         <img src="assets/img/comboimg.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Combos</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuBurger()">
+        <img src="assets/img/burgerbutton.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Hamburguesas</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuPapita()">
+        <img src="assets/img/papitas.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Para acompañar</p>
+    </div>
+  </div>
+
+</ion-content>

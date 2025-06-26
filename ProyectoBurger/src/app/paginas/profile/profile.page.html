@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="titletext">
+    <ion-title>Mi cuenta</ion-title>
+  </div>
+
+  <div id="container"> 
+    <div id="nametext">
+      <h3>Hola, {{userData.nombre}}</h3>    
+      <ion-button (click)="logout()"> Cerrar sesión </ion-button>
+    </div>
+
+    <div id="profiledata">
+      <h3>Tus datos personales</h3>
+      <p> Correo electrónico: {{userData.correo}}</p>
+      <p> Número telefónico: {{userData.numero}}</p>
+      <p class="address-text"> Dirección: {{userData.direccion}}</p>
+      <br>
+      <!--<ion-button> Cambiar contraseña </ion-button> -->
+    </div>
+  </div>
+</ion-content>

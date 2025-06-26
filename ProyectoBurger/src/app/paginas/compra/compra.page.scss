@@ -1,0 +1,32 @@
+ion-content {
+  --background: #d8d8d8 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  height: 100%;       
+  text-align: center; 
+}
+
+p{
+    color: #000000;
+}
+
+ion-title{
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+ion-spinner {
+  --color: #ffb300;
+  width: 64px !important;
+  height: 64px !important;
+}
+
+ion-spinner svg {
+  width: 64px !important;
+  height: 64px !important;
+}

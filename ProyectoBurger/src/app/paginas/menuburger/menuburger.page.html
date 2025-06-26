@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div id="menucontainer">
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuCombo()">
+         <img src="assets/img/comboimg.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Combos</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" id="selected">
+        <img src="assets/img/burgerbutton.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Hamburguesas</p>
+    </div>
+
+    <div>
+      <ion-button class="menuitem" (click)="goToMenuPapita()">
+        <img src="assets/img/papitas.png" alt="icono" class="imgboton" />
+      </ion-button>
+      <p>Para acompañar</p>
+    </div>
+  </div>
+
+  <div id = "itemscontainer">
+    <div class="itemcombo" (click)="goToProductDetail(productos[0])">
+        <img src={{productos[0]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[0]?.Nombre}} </p>
+    </div>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[1])">
+        <img src={{productos[1]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[1]?.Nombre}} </p>
+    </div>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[2])">
+        <img src={{productos[2]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[2]?.Nombre}} </p>
+    </div>
+
+    <div class="itemcombo" (click)="goToProductDetail(productos[3])">
+        <img src={{productos[3]?.RutaImagen}} alt="combo1" class="imgcombo" />
+        <p> {{productos[3]?.Nombre}} </p>
+    </div>
+
+  </div>
+
+</ion-content>

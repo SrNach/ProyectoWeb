@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <div id="titletext">
+    <ion-title>Crea tu cuenta</ion-title>
+  </div>
+
+  <div id="container">      
+    <ion-input [(ngModel)]="userData.correo" label="Correo electrónico:"></ion-input>
+    <ion-input [(ngModel)]="userData.nombre" label="Nombre y apellido:"></ion-input>
+    <ion-input [(ngModel)]="userData.numero" label="Número telefónico:"></ion-input>
+    <ion-input [(ngModel)]="userData.direccion" label="Dirección:"></ion-input>
+    <ion-input [(ngModel)]="userData.passw" type="password" label="Contraseña:" required>
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+    <ion-input  [(ngModel)]="userData.passwConfirm" type="password" label="Confirmar contraseña:"required>
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+
+    <ion-button (click)="register()"> Registrarse </ion-button>
+    <p class="underdot" routerLink="/login"> Ya tienes cuenta? Inicia sesión </p>
+
+  </div>
+</ion-content>
