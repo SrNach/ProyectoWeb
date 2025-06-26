@@ -31,7 +31,7 @@ Integrantes:
 - Pruebas POST y GET de API y DB en TheBurgersTest.json.
 - Implementación de seguridad contra inyecciones SQL/XSS.
 - Encriptacion de contraseñas.
-- Integración API externa de envío de correos para recuperar contraseña y aviso de compra.
+- Integración API externa de envío de correos para recuperar contraseña.
 
 ## Instrucciones de uso
 - Descargar carpeta "ProyectoWeb" del repositorio e ingresar a /ProyectoBurger.
@@ -46,6 +46,8 @@ Integrantes:
 Gestión de cuenta
 1. El usuario debe poder registrarse con correo electrónico, nombre de usuario, dirección, número telefónico, contraseña y confirmación contraseña.
 2. El usuario debe poder iniciar sesión con correo electrónico y contraseña.
+3. El usuario debe poder cambiar su contraseña.
+4. El sistema debe poder enviar un correo cuando el usuario desee cambiar su contraseña.
 
 Gestión de productos y pedidos
 1. El usuario debe poder ver detalles de los productos (Descripción, imagen, precio).
