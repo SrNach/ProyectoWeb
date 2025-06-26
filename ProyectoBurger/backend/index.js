@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3000;
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:8100'];
 const resetTokens = {};
 
-// Middlewares
 app.use(express.json());
 app.use(cors({
   origin: function (origin, callback) {
@@ -26,16 +25,16 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Rutas principales
+
 app.use('/api/usuarios', userRoutes);
 app.use('/auth', authRoutes);
 
-// Endpoints de la API
+
 app.get('/api/data', (req, res) => {
   res.status(200).json(BurgerMenu);
 });
 
-// Gestión de tokens de recuperación
+
 app.post('/api/verify-token', (req, res) => {
   const { correo, token } = req.body;
 
@@ -95,7 +94,6 @@ app.post('/api/pass-reset', async (req, res) => {
   } catch (err) {
     console.error('Error en sendResetEmail:', err);
     
-    // Elimina el token si falla el envío
     delete resetTokens[correo];
     
     res.status(500).json({ 
@@ -109,7 +107,6 @@ function generarToken6Digitos() {
   return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-// Limpieza periódica de tokens expirados
 setInterval(() => {
   for (const [email, data] of Object.entries(resetTokens)) {
     if (Date.now() > data.expires) {
@@ -118,8 +115,6 @@ setInterval(() => {
   }
 }, 60 * 60 * 1000); // Cada hora
 
-// Inicio del servidor
 app.listen(PORT, () => {
   console.log(`Servidor backend corriendo en http://localhost:${PORT}`);
-  //console.log(`Entorno: ${process.env.NODE_ENV || 'development'}`);
 });
